@@ -1,6 +1,7 @@
-﻿file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
-file(GLOB srcs "*.cpp")#Добавляем в переменную srcs все файлы с расширением .h
+﻿file(GLOB hdrs "*.h*") 
+file(GLOB srcs "*.cpp")
 
-add_library(${ListLib} STATIC ${srcs} ${hdrs}) #Создаем статическую библиотеку с именем из переменной ${MyLib1}, объявленной в родительском CMake файле (локальные переменные переносятся в наследников), в неё добавляются файлы из переменных ${srcs} и ${hdrs}
+add_executable(${QueueList} ${srcs} ${hdrs}) 
+target_link_libraries(${QueueList} ${QueueListLib}) 
 
 
