@@ -1,26 +1,6 @@
-﻿cmake_minimum_required(VERSION 2.8)
+﻿file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
+file(GLOB srcs "*.cpp")#Добавляем в переменную srcs все файлы с расширением .h
 
-set(PROJECT_NAME Lab_QueueList) 
-project(${PROJECT_NAME})
- 
-set(ListLib ListLib)
-set(QueueList QueueList)
-set(QueueListLib QueueListLib)
-set(QueueListTest QueueListTest)
+add_library(${ListLib} STATIC ${srcs} ${hdrs}) #Создаем статическую библиотеку с именем из переменной ${MyLib1}, объявленной в родительском CMake файле (локальные переменные переносятся в наследников), в неё добавляются файлы из переменных ${srcs} и ${hdrs}
 
 
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE)
-if(NOT CMAKE_BUILD_TYPE) 
- set(CMAKE_BUILD_TYPE Release) 
-endif()
-
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/ListLib)
-
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/QueueListLib)
-add_subdirectory(QueueList)
-add_subdirectory(ListLib)
-add_subdirectory(QueueListLib)
-add_subdirectory(QueueListTest)
-add_subdirectory(gtest)
