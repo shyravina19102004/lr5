@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/AntonMurzinov/Lab8.svg?branch=main)](https://travis-ci.org/AntonMurzinov/Lab8)
+[![Build Status](https://travis-ci.org/ShyravinaOksana/Lr5.svg?branch=main)](https://travis-ci.org/ShyravinaOksana/Lr5)
 
 
-# Lab8
+# Lr5
